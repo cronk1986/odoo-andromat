@@ -3,8 +3,6 @@ services:
     container_name: odoo-andromat
     build:
       context: ./docker/16.0
-    depends_on:
-      - postgres13
     ports:
       - "8069:8069"
     volumes:
