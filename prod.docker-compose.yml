@@ -14,12 +14,6 @@ services:
       - USER=$ODOO_DB_USER
       - PORT=$ODOO_DB_PORT
       - PASSWORD=$ODOO_DB_PASSWORD
-    networks:
-      - net-andromat-odoo
 
 volumes:
   odoo_andromat_data:
-
-networks:
-  net-andromat-odoo:
-    driver: bridge
