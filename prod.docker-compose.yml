@@ -1,0 +1,22 @@
+services:
+  odoo:
+    container_name: odoo-andromat
+    build:
+      context: ./docker/16.0
+    depends_on:
+      - postgres13
+    ports:
+      - "8069:8069"
+    volumes:
+      - odoo_andromat_data:/var/lib/odoo
+      - ./config:/etc/odoo
+      - ./addons:/mnt/extra-addons
+    networks:
+      - net-andromat-odoo
+
+volumes:
+  odoo_andromat_data:
+
+networks:
+  net-andromat-odoo:
+    driver: bridge

@@ -1,0 +1,54 @@
+<?xml version="1.0" ?>
+<odoo>
+    <record id="account_form_view" model="ir.ui.view">
+        <field name="name">account.move.form</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="after">
+                <field name="invoice_type"/>
+            </field>
+            <!--            <xpath expr="//div[@class='oe_button_box']" position="inside" icon="fa-calendar">-->
+            <!--                <button name="action_show_ticket_count" type="object" string="Tickets" class="btn-secondary" ic>-->
+            <!--                    <field name="ticket_count" string="Tickets" widget="statinfo"/>-->
+            <!--                </button>-->
+            <!--            </xpath>-->
+            <div name="button_box" position="inside">
+                <field name="ticket_count" invisible="1"/>
+                <field name="ticket_delivered_time_formatted" invisible="1"/>
+                <button name="action_show_ticket_count" class="oe_stat_button" icon="fa-clock-o" type="object"
+                        attrs="{'invisible': ['|', ('id', '=', False), ('invoice_type', '!=', 'bagHours')]}">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="ticket_delivered_time_formatted"/>
+                        </span>
+                        <span class="o_stat_text">Consumido</span>
+                    </div>
+                </button>
+                <button name="action_show_ticket_count" class="oe_stat_button" icon="fa-ticket" type="object"
+                        attrs="{'invisible': ['|', ('id', '=', False), ('invoice_type', '!=', 'bagHours')]}">
+                    <div class="o_field_widget o_stat_info">
+                        <span class="o_stat_value">
+                            <field name="ticket_count"/>
+                        </span>
+                        <!--                        <span class="o_stat_text">Tickets</span>-->
+                        <field name="smart_button_ticket_text" class="o_stat_text"/>
+                    </div>
+                </button>
+            </div>
+        </field>
+    </record>
+
+    <record id="account_move_tree_view_inherit" model="ir.ui.view">
+        <field name="name">account.move.tree.inherit</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_invoice_tree"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree" position="inside">
+                <field name="ticket_delivered_time_formatted" optional="show" string="Bolsa de horas"/>
+                <field name="partner_nif" optional="show" string="NIF/CIF"/>
+            </xpath>
+        </field>
+    </record>
+
+</odoo>

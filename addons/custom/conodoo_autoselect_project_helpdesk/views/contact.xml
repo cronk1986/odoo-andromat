@@ -1,0 +1,24 @@
+<?xml version="1.0" ?>
+<odoo>
+    <record id="contact_form_view" model="ir.ui.view">
+        <field name="name">contact.form.view</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <!--<xpath expr="//form/sheet/group/group[1]/field[@name='vat']" position="after">
+                <field name="andromat_project_id" string="Proyecto por defecto"/>
+            </xpath>-->
+            <field name="vat" position="after">
+                <field name="andromat_project_id" />
+            </field>
+            <!--<field name="andromat_project_id" position="after">
+                <field
+                        name="andromat_task_id"
+                        attrs="{'invisible' : [('andromat_project_id', '==', False)]}"
+                        options="{'dependent': 'andromat_project_id'}"
+                />
+            </field>-->
+        </field>
+    </record>
+
+</odoo>
