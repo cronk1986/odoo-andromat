@@ -2,8 +2,8 @@ services:
   odoo:
     container_name: odoo-andromat
     build:
-      context: ./docker/16.0
-      dockerfile: prod.Dockerfile
+      context: .
+      dockerfile: docker/16.0/prod.Dockerfile
     ports:
       - "8069:8069"
     volumes:
