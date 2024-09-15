@@ -3,12 +3,13 @@ services:
     container_name: odoo-andromat
     build:
       context: ./docker/16.0
+      dockerfile: prod.Dockerfile
     ports:
       - "8069:8069"
     volumes:
       - odoo_andromat_data:/var/lib/odoo
-      - ./config:/etc/odoo
-      - ./addons:/mnt/extra-addons
+#      - ./config:/etc/odoo
+#      - ./addons:/mnt/extra-addons
     environment:
       - HOST=$ODOO_DB_HOST
       - USER=$ODOO_DB_USER
