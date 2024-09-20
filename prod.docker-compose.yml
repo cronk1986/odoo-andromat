@@ -6,6 +6,8 @@ services:
       dockerfile: docker/16.0/prod.Dockerfile
     ports:
       - "8069:8069"
+      - "8071:8071"
+      - "8072:8072"
     volumes:
       - odoo_andromat_data:/var/lib/odoo
 #      - ./config:/etc/odoo
