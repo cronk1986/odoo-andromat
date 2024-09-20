@@ -5,16 +5,18 @@
     "summary": "Personalizaciones de vistas y funcionalidades",
     "description": "",
     "depends": [
-        "project", 
+        "timesheet_grid",
+        "hr_timesheet",
         "helpdesk_mgmt",
         "helpdesk_mgmt_timesheet",
+        "project_timesheet_time_control",
+        "project", 
         "contacts", 
         "sale_management", 
         "contract_sale", 
         "contract_sale_generation", 
         "account",
-        "contract",
-        "hr_timesheet"
+        "contract",    
     ],
     "data": [
         #"views/contact.xml",
