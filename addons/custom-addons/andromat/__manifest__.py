@@ -9,13 +9,13 @@
         "hr_timesheet",
         "helpdesk_mgmt",
         "helpdesk_mgmt_timesheet",
-        "project_timesheet_time_control", 
-        "contacts", 
-        "sale_management", 
+        "project_timesheet_time_control",
+        "contacts",
+        "sale_management",
         "contract",
-        "contract_sale", 
-        "contract_sale_generation", 
-        "account"    
+        "contract_sale",
+        "contract_sale_generation",
+        "account"
     ],
     "data": [
         #"views/contact.xml",
