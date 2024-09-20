@@ -4,7 +4,18 @@
     "sequence": 150,
     "summary": "Personalizaciones de vistas y funcionalidades",
     "description": "",
-    "depends": ["project", "helpdesk_mgmt", "contacts", "sale_management", "contract_sale", "contract_sale_generation", "account"],
+    "depends": [
+        "project", 
+        "helpdesk_mgmt",
+        "helpdesk_mgmt_timesheet",
+        "contacts", 
+        "sale_management", 
+        "contract_sale", 
+        "contract_sale_generation", 
+        "account",
+        "contract",
+        "hr_timesheet"
+    ],
     "data": [
         #"views/contact.xml",
         "views/ticket.xml",
